@@ -17,13 +17,13 @@ var app = angular.module("ngDownloader", ["kendo.directives"]);
 app.controller('searchCtrl', function ($scope, $http) {
     $scope.search = function () {
         if ($scope.query) {
-            console.log($scope.query);
+            //console.log($scope.query);
             kendo.ui.progress($("#search"), true);
             $http({
                 method: "GET",
                 url: "https://s1jv2959n8.execute-api.us-east-1.amazonaws.com/v1?q=" + $scope.query
             }).success(function mySucces(response) {
-                console.log(response);
+                //console.log(response);
                 $scope.data = response;
                 kendo.ui.progress($("#search"), false);
             });
