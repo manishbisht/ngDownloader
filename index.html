@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free Online service to Download YouTube videos at one click!">
+    <title>ngDownloader | Free Online Downloader: Download YouTube Videos</title>
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.1.223/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.1.223/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.1.223/styles/kendo.material.mobile.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kendo.cdn.telerik.com/2017.1.223/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.1.223/js/angular.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.1.223/js/kendo.all.min.js"></script>
 </head>
-<body>
-$END$
+<body ng-app="ngDownloader">
+<header><i class="material-icons" style="padding-right: 10px;font-size: 30px;">cloud_download</i>ngDownloader</header>
+<div ng-controller="searchCtrl" class="search" align="center">
+    <input id="url" type="text" ng-model="query" ng-keyup="$event.keyCode == 13 && search()" placeholder="Enter URL here..."/>
+    <kendo-button id="search" ng-click="search()">Get Download Links</kendo-button>
+    <div class="result">
+        <div class="video-image">
+            <img src="{{data.thumbnail}}">
+        </div>
+        <div class="video-description" align="left">
+            <p><b>Title: </b>{{data.title}}</p>
+            <p><b>Rating: </b>{{data.average_rating}}</b></p>
+            <p><b>Duration: </b>{{data.duration | date: 'H:mm:ss'}}</b></p>
+        </div>
+    </div>
+
+</div>
+<script src="js/app.js"></script>
+<script>
+
+</script>
 </body>
 </html>
