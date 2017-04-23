@@ -48,6 +48,29 @@ img{
     width: 100%;
     padding: 2px;
 }
+.error{
+    color: red;
+}
+#tabstrip{
+    margin: 0px;
+    background-color: #2196F3;
+    margin-top: 20px;
+    border: solid #2196F3;
+    border-top: 0;
+}
+#tabstrip .tab li{
+    background-color: #2196F3;
+    font-weight: bold;
+}
+footer{
+    position: fixed;
+    bottom: 10px;
+    z-index: 5;
+    padding: 0px;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
 @media only screen and (min-width: 700px) {
     .search{
         margin-top: 80px;
@@ -77,5 +100,8 @@ img{
     }
     .box{
         width: 70%;
+    }
+    #tabstrip{
+        margin: 20px;
     }
 }

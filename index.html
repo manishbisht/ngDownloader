@@ -22,7 +22,7 @@
     <input id="url" type="text" ng-model="query" ng-keyup="$event.keyCode == 13 && search()" placeholder="Enter URL here..."/>
     <kendo-button id="search" ng-click="search()">Get Download Links</kendo-button>
     <div class="result" ng-if="data">
-        <div class="video-image">
+        <div class="video-image" ng-if="!data.errorMessage">
             <img src="{{data.thumbnail}}" ng-if="data.thumbnail">
             <img src="images/na.jpg" ng-if="!data.thumbnail">
         </div>
@@ -48,7 +48,56 @@
             </div>
         </div>
     </div>
+    <div ng-if="data.errorMessage" class="error">
+        <p ng-if="data.errorType"><b>Error Type: </b>{{data.errorType}}</p>
+        <p ng-if="data.errorMessage"><b>Error Message: </b>{{data.errorMessage}}</p>
+    </div>
+    <div id="tabstrip">
+        <ul class="tab">
+            <li class="k-state-active">
+                Supported Websites
+            </li>
+            <li>
+                How to download ?
+            </li>
+            <li>
+                About Developer
+            </li>
+        </ul>
+        <div align="left">
+            <span>&nbsp;</span>
+            <div>
+                <p>It supports almost all websites. Some of them are</p>
+                <ul>
+                    <li>YouTube</li>
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>KhanAcademy</li>
+                </ul>
+                <p>NOTE: This app uses <a href="https://github.com/rg3/youtube-dl" target="_blank">youtube-dl</a>. <a href="http://rg3.github.io/youtube-dl/supportedsites.html" target="_blank">Here</a> is the complete list of supported websites.</p>
+            </div>
+        </div>
+        <div align="left">
+            <span>&nbsp;</span>
+            <div>
+                <ol>
+                    <li>Enter the URL-address in the input field at the top of the page.</li>
+                    <li>Press Enter or click on the "Download" button to the right of the input field.</li>
+                </ol>
+            </div>
+        </div>
+        <div align="left">
+            <span>&nbsp;</span>
+            <div>
+                <p>Hi, I am Manish Bisht. You can know more about me at <a href="https://manishbisht.github.io" target="_blank">https://manishbisht.github.io/</a></p>
+            </div>
+        </div>
+    </div>
 </div>
+<footer>
+    <hr>
+    &copy; 2017 <a href="https://manishbisht.github.io" target="_blank">Manish Bisht</a> &middot; Hosted with <i class="material-icons">favorite</i> on GitHub &middot; Backend on Amazon AWS
+</footer>
 <script src="js/app.js"></script>
 <script>
 
