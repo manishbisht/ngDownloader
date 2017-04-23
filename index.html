@@ -36,7 +36,7 @@
         </div>
     </div>
     <div ng-if="data.formats">
-        <div ng-repeat="d in data.formats" class="others">
+        <div ng-repeat="d in data.formats | orderBy:'-'" class="others">
             <div align="left" class="box">
                 <span ng-if="d.format_note"><b>Type: </b>{{d.format_note}} </span>
                 <span ng-if="d.format"><b>Format: </b>{{d.format}}</span><br>
@@ -90,10 +90,12 @@
             <span>&nbsp;</span>
             <div>
                 <p>Hi, I am Manish Bisht. You can know more about me at <a href="https://manishbisht.github.io" target="_blank">https://manishbisht.github.io/</a></p>
+                <p>Bugs or feature request ? Drop email at <a href="mailto:manish.bisht490@gmail.com">manish.bisht490@gmail.com</a></p>
             </div>
         </div>
     </div>
 </div>
+<div style="min-height: 80px"></div>
 <footer>
     <hr>
     &copy; 2017 <a href="https://manishbisht.github.io" target="_blank">Manish Bisht</a> &middot; Hosted with <i class="material-icons">favorite</i> on GitHub &middot; Backend on Amazon AWS

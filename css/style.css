@@ -64,12 +64,15 @@ img{
 }
 footer{
     position: fixed;
-    bottom: 10px;
+    bottom: 0px;
     z-index: 5;
-    padding: 0px;
+    padding-bottom: 10px;
     width: 100%;
     background-color: white;
     text-align: center;
+}
+.k-loading-color{
+    background-color: #2196F3;
 }
 @media only screen and (min-width: 700px) {
     .search{
