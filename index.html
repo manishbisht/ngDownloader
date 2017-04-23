@@ -21,17 +21,33 @@
 <div ng-controller="searchCtrl" class="search" align="center">
     <input id="url" type="text" ng-model="query" ng-keyup="$event.keyCode == 13 && search()" placeholder="Enter URL here..."/>
     <kendo-button id="search" ng-click="search()">Get Download Links</kendo-button>
-    <div class="result">
+    <div class="result" ng-if="data">
         <div class="video-image">
-            <img src="{{data.thumbnail}}">
+            <img src="{{data.thumbnail}}" ng-if="data.thumbnail">
+            <img src="images/na.jpg" ng-if="!data.thumbnail">
         </div>
         <div class="video-description" align="left">
-            <p><b>Title: </b>{{data.title}}</p>
-            <p><b>Rating: </b>{{data.average_rating}}</b></p>
-            <p><b>Duration: </b>{{data.duration | date: 'H:mm:ss'}}</b></p>
+            <p ng-if="data.title"><b>Title: </b>{{data.title}}</p>
+            <p ng-if="data.like_count"><b>Likes: </b>{{data.like_count}}</p>
+            <p ng-if="data.duration"><b>Duration: </b>{{data.duration}} seconds</b></p>
+            <p ng-if="data.uploader"><b>Uploaded by: </b>{{data.uploader}}</b></p>
+            <p ng-if="data.license"><b>License: </b>{{data.license}}</b></p>
+            <a ng-if="data.url" href="{{data.url}}" download="{{data.url}}"><kendo-button class="k-primary">Download Best Quality <span ng-if="data.format_note">({{data.format_note}})</span></kendo-button></a>
         </div>
     </div>
-
+    <div ng-if="data.formats">
+        <div ng-repeat="d in data.formats" class="others">
+            <div align="left" class="box">
+                <span ng-if="d.format_note"><b>Type: </b>{{d.format_note}} </span>
+                <span ng-if="d.format"><b>Format: </b>{{d.format}}</span><br>
+                <span ng-if="d.filesize"><b>File Size: </b>{{d.filesize}}KB </span>
+                <span ng-if="d.ext"><b>Extension: </b>.{{d.ext}}</span>
+            </div>
+            <div>
+                <a ng-if="d.url" href="{{d.url}}" download="{{d.url}}"><kendo-button class="k-primary">Download <span ng-if="d.format_note">({{d.format_note}})</span></kendo-button></a>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="js/app.js"></script>
 <script>

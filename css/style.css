@@ -39,9 +39,18 @@ header{
 img{
     width: 100%;
 }
+.others{
+    display: flex;
+    padding: 5px;
+    border: groove;
+}
+.box{
+    width: 100%;
+    padding: 2px;
+}
 @media only screen and (min-width: 700px) {
     .search{
-        margin-top: 100px;
+        margin-top: 80px;
     }
     #url{
         width: 70%;
@@ -53,7 +62,7 @@ img{
     }
     .result{
         display: flex;
-        margin-top: 20px;
+        margin-top: 15px;
         padding: 15px;
     }
     .video-image{
@@ -62,5 +71,11 @@ img{
     .video-description{
         width: 50%;
         padding: 15px;
+    }
+    .others{
+        width: 700px;
+    }
+    .box{
+        width: 70%;
     }
 }
