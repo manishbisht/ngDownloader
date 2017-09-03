@@ -23,7 +23,7 @@
     <kendo-button id="search" ng-click="search()">Get Download Links</kendo-button>
     <div class="result" ng-if="data">
         <div class="video-image" ng-if="!data.errorMessage">
-            <img src="{{data.thumbnail}}" ng-if="data.thumbnail">
+            <img ng-src="{{data.thumbnail}}" ng-if="data.thumbnail">
             <img src="images/na.jpg" ng-if="!data.thumbnail">
         </div>
         <div class="video-description" align="left">
