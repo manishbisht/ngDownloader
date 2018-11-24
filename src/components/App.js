@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route} from 'react-router-dom'
 import Header from './common/Header'
-import Search from './pages/Search'
+import Home from './pages/Home'
 
 class App extends Component {
     render() {
         return (
             <div>
                 <Header/>
-                <Search/>
                 <BrowserRouter>
+                    <Route exact path="/" render={() => <Home />} />
                 </BrowserRouter>
             </div>
         );

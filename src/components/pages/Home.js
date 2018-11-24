@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-class Search extends Component {
+class Home extends Component {
     render() {
         return (
             <div align="center">
@@ -20,19 +20,19 @@ class Search extends Component {
                     label=""
                     placeholder="Example: https://www.youtube.com/watch?v=J1uxBvrPCig"
                     margin="normal"
-                    style={{width: '80%'}}
+                    style={{width: '80%', maxWidth: 700}}
                 />
                 <div>
                     <Button variant="contained" color="primary" style={{margin: 5}}>
                         Get Download Links
                     </Button>
-                    <Button variant="contained" style={{margin: 5}}>
-                        Who own this Code ?
-                    </Button>
+                    <a target="_blank" rel="noopener noreferrer" href="https://manishbisht.me" style={{textDecoration: 'none', color: 'inherit'}}>
+                        <Button variant="contained" style={{margin: 5}}>About Developer</Button>
+                    </a>
                 </div>
             </div>
         );
     }
 }
 
-export default Search;
+export default Home;
