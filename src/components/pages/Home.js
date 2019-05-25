@@ -5,28 +5,51 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 class Home extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            videoURL: ''
+        };
+    }
+
+    handleSearchValueChange(e) {
+        this.setState({
+            videoURL: e.target.value,
+        })
+    }
+
+    getDownloadLinks() {
+        this.props.history.push('/search?videoURL=' + this.state.videoURL)
+    }
+
     render() {
         return (
-            <div align="center">
-                <Icon style={{fontSize: 200, color: '#3f51b5', paddingTop: '5%'}}>cloud_download</Icon>
-                <Typography variant="display2" color="inherit">
-                    ngDownloader
-                </Typography>
-                <Typography variant="subheading" color="inherit">
-                    Download videos from YouTube.com and a few more websites
-                </Typography>
-                <TextField
-                    id="with-placeholder"
-                    label=""
-                    placeholder="Example: https://www.youtube.com/watch?v=J1uxBvrPCig"
-                    margin="normal"
-                    style={{width: '80%', maxWidth: 700}}
-                />
+            <div style={{textAlign: 'center'}}>
                 <div>
-                    <Button variant="contained" color="primary" style={{margin: 5}}>
+                    <Icon style={{fontSize: 200, color: '#283593', paddingTop: '5%'}}>cloud_download</Icon>
+                </div>
+                <div>
+                    <Typography variant="h1" component="h1" style={{color: '#283593'}}>
+                        ngDownloader
+                    </Typography>
+                </div>
+                <div>
+                    <TextField id="video-url"
+                               label=""
+                               placeholder="Example: https://www.youtube.com/watch?v=J1uxBvrPCig"
+                               margin="normal"
+                               style={{width: '80%', maxWidth: 700}}
+                               onChange={(e) => this.handleSearchValueChange(e)}/>
+                </div>
+                <div>
+                    <Button variant="contained"
+                            color="primary"
+                            style={{margin: 5}}
+                            onClick={() => this.getDownloadLinks()}>
                         Get Download Links
                     </Button>
-                    <a target="_blank" rel="noopener noreferrer" href="https://manishbisht.me" style={{textDecoration: 'none', color: 'inherit'}}>
+                    <a target="_blank" rel="noopener noreferrer" href="https://manishbisht.github.io" style={{textDecoration: 'none', color: 'inherit'}}>
                         <Button variant="contained" style={{margin: 5}}>About Developer</Button>
                     </a>
                 </div>
