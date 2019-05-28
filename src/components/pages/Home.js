@@ -30,7 +30,7 @@ class Home extends Component {
                     <Icon style={{fontSize: 200, color: '#283593', paddingTop: '5%'}}>cloud_download</Icon>
                 </div>
                 <div>
-                    <Typography variant="h1" component="h1" style={{color: '#283593'}}>
+                    <Typography variant="h3" component="h3" style={{color: '#283593'}}>
                         ngDownloader
                     </Typography>
                 </div>

@@ -15,7 +15,7 @@ class Header extends Component {
                         <Icon>cloud_download</Icon>
                     </IconButton>
                     <Typography variant="title" color="inherit">
-                        <Link to={'/'}>ngDownloader</Link>
+                        <Link to={'/'} style={{textDecoration: 'none', color: 'inherit'}}>ngDownloader</Link>
                     </Typography>
                 </Toolbar>
             </AppBar>
